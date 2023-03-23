@@ -31,12 +31,7 @@ import org.w3c.dom.NodeList;
 @WebServlet("/ProcesoArchivo")
 @MultipartConfig
 public class ProcesoArchivo extends HttpServlet { 
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-          
+   
     
     private static final long serialVersionUID = 1L;
        
@@ -101,6 +96,5 @@ public class ProcesoArchivo extends HttpServlet {
       response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Error al procesar el archivo XML");
     }
                 
+}        
 }
-        
-}}
