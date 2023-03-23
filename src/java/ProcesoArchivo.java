@@ -31,6 +31,21 @@ import org.w3c.dom.NodeList;
 @WebServlet("/ProcesoArchivo")
 @MultipartConfig
 public class ProcesoArchivo extends HttpServlet { 
+    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        try (PrintWriter out = response.getWriter()) {
+            /* TODO output your page here. You may use following sample code. */
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>ProcesoArchivo</title>");            
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<h1>Servlet Ejemplo1 at " + request.getContextPath() + "</h1>");
+            out.println("</body>");
+            out.println("</html>");
+        }
     private static final long serialVersionUID = 1L;
        
         
@@ -93,5 +108,7 @@ public class ProcesoArchivo extends HttpServlet {
       e.printStackTrace();
       response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Error al procesar el archivo XML");
     }
+                
 }
+        
 }
